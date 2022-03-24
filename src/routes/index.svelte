@@ -84,9 +84,9 @@
 
 {#if submit}
     {#await submit}
-        <p>Sending...</p>
+        <p>Bestellung wird abgesendet!</p>
     {:then resp}
-        <p>🎉 Done!</p>
-        <pre>RESPONSE: {JSON.stringify(resp, null, 2)}</pre>
+        <p>🎉 Bestellung abgesendet!</p>
+        <pre>Ergebnis: {JSON.stringify(resp, null, 2)}</pre>
     {/await}
 {/if}
