@@ -12,9 +12,9 @@ datasource db {
 
 model Bestellung {
   uid        String  @id @default(cuid())
-  created_at DateTime
+  createdAt DateTime @default(now())
   name       String
-  amount     String
+  amount     Int
   ort        String
   email      String
   nummer     String
