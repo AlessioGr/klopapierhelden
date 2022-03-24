@@ -15,11 +15,19 @@
         <label class="mr-3 flex items-center" for="fname">Dein Name</label>
         <input class="border-solid border-blue-300 rounded-md border-4" type="text" id="fname" name="fname"><br>
 
-        <label class="mr-3 flex items-center" for="amount">Wie viel Klopapier benötigst du?</label>
+        <label class="mr-3 flex items-center" for="amount">Wie viele Rollen Klopapier benötigst du?</label>
         <input class="border-solid border-blue-300 rounded-md border-4" type="number" id="amount" name="amount"><br>
 
         <label class="mr-3 flex items-center" for="location">Wo kann ich dich finden?</label>
-        <input class="border-solid border-blue-300 rounded-md border-4" type="text" id="location" name="location"><br><br>
+        <input class="border-solid border-blue-300 rounded-md border-4" type="text" id="location" name="location"><br>
+
+        <label class="mr-3 flex items-center" for="email">E-Mail</label>
+        <input class="border-solid border-blue-300 rounded-md border-4" type="text" id="email" name="email"><br>
+
+        <label class="mr-3 flex items-center" for="number">Nummer</label>
+        <input class="border-solid border-blue-300 rounded-md border-4" type="text" id="number" name="number"><br>
+
+        <br>
 
         <button on:click={handleClick} class="p-4 bg-blue-600 rounded-md max-w-300px flex text-white transition-all	hover:(bg-blue-800 transform scale-110)">
             Jetzt bestellen

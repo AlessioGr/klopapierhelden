@@ -16,5 +16,7 @@ model Bestellung {
   name       String
   amount     String
   ort        String
+  email        String
+  nummer        String
   done       Boolean
 }
