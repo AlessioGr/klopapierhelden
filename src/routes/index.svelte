@@ -21,7 +21,7 @@
         <label class="mr-3 flex items-center" for="location">Wo kann ich dich finden?</label>
         <input class="border-solid border-blue-300 rounded-md border-4" type="text" id="location" name="location"><br><br>
 
-        <button on:click={handleClick} class="p-4 bg-blue-600 rounded-md max-w-300px flex text-white">
+        <button on:click={handleClick} class="p-4 bg-blue-600 rounded-md max-w-300px flex text-white transition-all	hover:(bg-blue-800 transform scale-110)">
             Jetzt bestellen
         </button>
     {:else}
