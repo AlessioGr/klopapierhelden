@@ -5,9 +5,9 @@ const prisma = new PrismaClient();
 export async function post({request}) {
     const errors = false;
 
-    let body = await request.json();
+    const body = await request.json();
 
-    const bestellung = await prisma.Bestellung.create({
+    const bestellung = await prisma.bestellung.create({
         data: {
             name: 'Test',
             email: 'test@prisma.io',
