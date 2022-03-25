@@ -51,7 +51,7 @@
 </script>
 
 
-<h1 class="text-center text-5xl font-bold mt-10">Klopapier leer?</h1>
+<h1 class="text-center text-5xl font-bold mt-10">Klopapier alle?</h1>
 <p class="mt-4 text-center">Bestellen Sie jetzt super günstiges Klopapier für 2€ pro Rolle</p>
 
 <div class="flex mt-4 justify-center flex-col max-w-600px m-auto text-center items-center">
