@@ -4,7 +4,7 @@
 
     const navLinks = [
         { link: '/', label: 'Startseite' },
-        { link: '/vergleich', label: 'Klopapier Vergleich' }
+        { link: '/', label: 'Klopapier Vergleich' }
     ];
 
 </script>
