@@ -1,31 +1,28 @@
 import { createClient } from '@supabase/supabase-js'
 
-export async function post({request}) {
+export async function get({ params }) {
     const errors = false;
-
-    const body: {name: string, rollen: number, wofinden: string, email: string, nummer: string} = await request.json();
 
     const supabase = createClient('https://lnhuexooxbomzwcgypsj.supabase.co', 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImxuaHVleG9veGJvbXp3Y2d5cHNqIiwicm9sZSI6ImFub24iLCJpYXQiOjE2NTI3MDQ3OTIsImV4cCI6MTk2ODI4MDc5Mn0.yFiU16z9Dpn0c7iSVC11W3rlDSawCeNybBc7aupmOzA')
 
 
-
     const { data, error } = await supabase
         .from('orders')
-        .insert([
-            {
-                name: body.name,
-                amount: body.rollen,
-                location: body.wofinden,
-                email: body.email,
-                phone_number: body.nummer,
-                completed: false
-            }
-        ])
+        .select('amount')
 
-   /* const { data, error } = await supabase
-        .from('orders')
-        .select()
-*/
+
+    let count = 0;
+
+    for(const order of data) {
+        count += order.amount;
+    }
+
+
+
+    /* const { data, error } = await supabase
+         .from('orders')
+         .select()
+ */
     /*const bestellung = await prisma.bestellung.create({
         data: {
             name: 'Test',
@@ -38,17 +35,18 @@ export async function post({request}) {
     })*/
 
 
+
     if (errors) {
         // return validation errors
         return {
             status: 400,
-            body: { errors }
+            body: { error }
         };
     }
 
     // redirect to the newly created item
     return {
         status: 200,
-        body: { request: body }
+        body: { count: count }
     };
 }

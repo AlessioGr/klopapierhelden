@@ -1,4 +1,16 @@
+<script context="module" lang="ts">
+
+    export async function load({  fetch } ) {
+
+
+        return { props: {
+                fetch: fetch
+            } };
+    }
+</script>
+
 <script lang="ts">
+    export let fetch;
 
     let ordered = false;
     let submit;
@@ -48,11 +60,29 @@
 
         ordered = true;
     }
+
+
+    let totalordersCount;
+
+    async function getCount() {
+        const totalorders = await fetch('/totalorders', {
+            method: 'GET',
+        })
+        const totalordersJson = await totalorders.json();
+
+
+        totalordersCount = totalordersJson.count;
+    }
+
+    getCount();
 </script>
 
 
 <h1 class="text-center text-5xl font-bold mt-10">Klopapier alle?</h1>
-<p class="mt-4 text-center">Bestellen Sie jetzt super günstiges Klopapier für 2€ pro Rolle</p>
+<p class="mt-4 text-center">Bestellen Sie jetzt super günstiges Klopapier für 2€ pro Rolle.</p>
+{#if totalordersCount}
+    <p class="mt-4 text-center px-4 py-2 rounded-md bg-blue-500 text-white">Es wurden schon <b>{totalordersCount}</b> Rolle(n) bestellt.</p>
+{/if}
 
 <div class="flex mt-4 justify-center flex-col max-w-600px m-auto text-center items-center">
     {#if ordered === false}
