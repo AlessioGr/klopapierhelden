@@ -7,7 +7,7 @@ export async function post({request}) {
 
     const supabase = createClient('https://lnhuexooxbomzwcgypsj.supabase.co', 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImxuaHVleG9veGJvbXp3Y2d5cHNqIiwicm9sZSI6ImFub24iLCJpYXQiOjE2NTI3MDQ3OTIsImV4cCI6MTk2ODI4MDc5Mn0.yFiU16z9Dpn0c7iSVC11W3rlDSawCeNybBc7aupmOzA')
 
-
+    console.log("Got post request:", request)
 
     const { data, error } = await supabase
         .from('orders')
