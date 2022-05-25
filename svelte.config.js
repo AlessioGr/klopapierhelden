@@ -1,4 +1,4 @@
-import adapter from '@sveltejs/adapter-auto';
+import adapter from '@sveltejs/adapter-node';
 import preprocess from 'svelte-preprocess';
 import WindiCSS from 'vite-plugin-windicss'
 
@@ -9,16 +9,20 @@ const config = {
 	preprocess: preprocess(),
 
 	kit: {
+		adapter: adapter(),
 		prerender: {
 			default: true,
+			crawl: true,
 		},
-		adapter: adapter(),
 		vite: {
 			plugins: [
 				WindiCSS(),
 			],
+			build: {
+				target: "es2020"
+			}
 		},
-	},
+	}
 };
 
 export default config;
