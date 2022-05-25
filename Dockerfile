@@ -9,17 +9,13 @@ COPY . .
 
 RUN echo "Starting install..."
 
-RUN npm install --force
-
+RUN pnpm install --force
 
 RUN echo "Running build..."
 
-RUN npm run build
+RUN pnpm run build
 
 RUN echo "Done"
-
-# Run everything after as non-privileged user.
-USER pptruser
 
 EXPOSE 3000
 
